@@ -9,7 +9,7 @@
   "types": "lib/ts-morph-common.d.ts",
   "scripts": {
     "build": "npm run build:declarations && npm run build:node",
-    "build:node": "rimraf dist && npm run createLibFile && npm run rollup && deno run -A scripts/bundleLocalTs.ts",
+    "build:node": "rimraf dist && npm run createLibFile && npm run rollup",
     "build:deno": "rimraf ../../deno/common && rimraf dist-deno && npm run rollup -- --environment BUILD:deno && npm run build:declarations && deno run -A scripts/buildDeno.ts",
     "build:declarations": "deno run -A scripts/buildDeclarations.ts",
     "createLibFile": "deno run -A scripts/createLibFile.ts",
