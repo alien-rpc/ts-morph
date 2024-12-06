@@ -947,11 +947,15 @@ export interface RuntimePath {
     relative(from: string, to: string): string;
 }
 
-export declare function matchFiles(this: any, path: string, extensions: ReadonlyArray<string>, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string, depth: number | undefined, getEntries: (path: string) => FileSystemEntries, realpath: (path: string) => string, directoryExists: (path: string) => boolean): string[];
+export declare let getEmitModuleResolutionKind: (this: any, compilerOptions: ts.CompilerOptions) => ModuleResolutionKind;
 
-export declare function getFileMatcherPatterns(this: any, path: string, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string): FileMatcherPatterns;
+export declare let getFileMatcherPatterns: (this: any, path: string, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string) => FileMatcherPatterns;
 
-export declare function getEmitModuleResolutionKind(this: any, compilerOptions: ts.CompilerOptions): any;
+export declare let matchFiles: (this: any, path: string, extensions: ReadonlyArray<string>, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string, depth: number | undefined, getEntries: (path: string) => FileSystemEntries, realpath: (path: string) => string, directoryExists: (path: string) => boolean) => string[];
+
+export declare let DiagnosticCategory: typeof ts.DiagnosticCategory;
+
+export declare let EmitHint: typeof ts.EmitHint;
 
 export interface FileMatcherPatterns {
     /** One pattern for each "include" spec. */
@@ -967,6 +971,40 @@ export interface FileSystemEntries {
     readonly files: ReadonlyArray<string>;
     readonly directories: ReadonlyArray<string>;
 }
+
+export declare let LanguageVariant: typeof ts.LanguageVariant;
+
+export type ModuleKind = ts.ModuleKind;
+
+export declare let ModuleKind: typeof ts.ModuleKind;
+
+export type ModuleResolutionKind = ts.ModuleResolutionKind;
+
+export declare let ModuleResolutionKind: typeof ts.ModuleResolutionKind;
+
+export declare let NewLineKind: typeof ts.NewLineKind;
+
+export declare let NodeFlags: typeof ts.NodeFlags;
+
+export declare let ObjectFlags: typeof ts.ObjectFlags;
+
+export type ScriptKind = ts.ScriptKind;
+
+export declare let ScriptKind: typeof ts.ScriptKind;
+
+export type ScriptTarget = ts.ScriptTarget;
+
+export declare let ScriptTarget: typeof ts.ScriptTarget;
+
+export declare let SymbolFlags: typeof ts.SymbolFlags;
+
+export type SyntaxKind = ts.SyntaxKind;
+
+export declare let SyntaxKind: typeof ts.SyntaxKind;
+
+export declare let TypeFlags: typeof ts.TypeFlags;
+
+export declare let TypeFormatFlags: typeof ts.TypeFormatFlags;
 
 export declare class ArrayUtils {
     private constructor();
@@ -1063,19 +1101,4 @@ export declare class StringUtils {
 }
 
 export import CompilerOptions = ts.CompilerOptions;
-export import DiagnosticCategory = ts.DiagnosticCategory;
-export import EditorSettings = ts.EditorSettings;
-export import EmitHint = ts.EmitHint;
-export import LanguageVariant = ts.LanguageVariant;
-export import ModuleKind = ts.ModuleKind;
-export import ModuleResolutionKind = ts.ModuleResolutionKind;
-export import NewLineKind = ts.NewLineKind;
-export import NodeFlags = ts.NodeFlags;
-export import ObjectFlags = ts.ObjectFlags;
-export import ScriptKind = ts.ScriptKind;
-export import ScriptTarget = ts.ScriptTarget;
-export import SymbolFlags = ts.SymbolFlags;
-export import SyntaxKind = ts.SyntaxKind;
-export import TypeFlags = ts.TypeFlags;
-export import TypeFormatFlags = ts.TypeFormatFlags;
 export { ts };
