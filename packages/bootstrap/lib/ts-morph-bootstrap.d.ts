@@ -1,4 +1,4 @@
-import { RuntimeDirEntry, ts } from "@ts-morph/common";
+import { RuntimeDirEntry, StandardizedFilePath, ts } from "@ts-morph/common";
 
 /**
  * Holds the compiler options.
@@ -304,6 +304,14 @@ export declare class Project {
      * @param tsConfigFilePath - File path to the tsconfig.json file.
      */
     addSourceFilesFromTsConfigSync(tsConfigFilePath: string): ts.SourceFile[];
+    resolveTsConfig(tsConfigFilePath: string): {
+        readonly compilerOptions: ts.CompilerOptions;
+        readonly paths: {
+            filePaths: StandardizedFilePath[];
+            directoryPaths: StandardizedFilePath[];
+        };
+        readonly errors: ts.Diagnostic[];
+    };
     /**
      * Creates a source file at the specified file path with the specified text.
      *

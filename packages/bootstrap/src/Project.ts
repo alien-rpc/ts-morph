@@ -331,6 +331,22 @@ export class Project {
     return addSourceFilesForTsConfigResolverSync(this, resolver, resolver.getCompilerOptions());
   }
 
+  resolveTsConfig(tsConfigFilePath: string) {
+    const resolver = this.#getTsConfigResolver(tsConfigFilePath);
+    let compilerOptions: ts.CompilerOptions | undefined;
+    return {
+      get compilerOptions() {
+        return (compilerOptions ??= resolver.getCompilerOptions());
+      },
+      get paths() {
+        return resolver.getPaths(this.compilerOptions);
+      },
+      get errors() {
+        return resolver.getErrors();
+      },
+    };
+  }
+
   #getTsConfigResolver(tsConfigFilePath: string) {
     const standardizedFilePath = this.#fileSystemWrapper.getStandardizedAbsolutePath(tsConfigFilePath);
     return new TsConfigResolver(this.#fileSystemWrapper, standardizedFilePath, this.compilerOptions.getEncoding());
