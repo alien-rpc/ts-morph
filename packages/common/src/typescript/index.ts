@@ -3,6 +3,7 @@ export * as ts from "./module";
 export {
   getEmitModuleResolutionKind,
   getFileMatcherPatterns,
+  injectTypeScriptModule,
   matchFiles,
   CompilerOptions,
   DiagnosticCategory,
@@ -16,6 +17,7 @@ export {
   NodeFlags,
   ObjectFlags,
   ScriptKind,
+  ScriptSnapshot,
   ScriptTarget,
   SymbolFlags,
   SyntaxKind,

@@ -951,6 +951,8 @@ export declare let getEmitModuleResolutionKind: (this: any, compilerOptions: ts.
 
 export declare let getFileMatcherPatterns: (this: any, path: string, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string) => FileMatcherPatterns;
 
+export declare function injectTypeScriptModule(ts: any): void;
+
 export declare let matchFiles: (this: any, path: string, extensions: ReadonlyArray<string>, excludes: ReadonlyArray<string>, includes: ReadonlyArray<string>, useCaseSensitiveFileNames: boolean, currentDirectory: string, depth: number | undefined, getEntries: (path: string) => FileSystemEntries, realpath: (path: string) => string, directoryExists: (path: string) => boolean) => string[];
 
 export declare let DiagnosticCategory: typeof ts.DiagnosticCategory;
@@ -991,6 +993,8 @@ export declare let ObjectFlags: typeof ts.ObjectFlags;
 export type ScriptKind = ts.ScriptKind;
 
 export declare let ScriptKind: typeof ts.ScriptKind;
+
+export declare let ScriptSnapshot: typeof ts.ScriptSnapshot;
 
 export type ScriptTarget = ts.ScriptTarget;
 
