@@ -1,6 +1,6 @@
 import ts from "typescript";
 
-export function injectTypeScriptModule(ts: typeof import("typescript")) {
+export function injectTypeScriptModule(ts: any) {
   // Enums
   DiagnosticCategory = ts.DiagnosticCategory;
   EmitHint = ts.EmitHint;
@@ -37,9 +37,9 @@ export function injectTypeScriptModule(ts: typeof import("typescript")) {
   sys = ts.sys;
 
   // Private APIs
-  matchFiles = (ts as any).matchFiles;
-  getFileMatcherPatterns = (ts as any).getFileMatcherPatterns;
-  getEmitModuleResolutionKind = (ts as any).getEmitModuleResolutionKind;
+  matchFiles = ts.matchFiles;
+  getFileMatcherPatterns = ts.getFileMatcherPatterns;
+  getEmitModuleResolutionKind = ts.getEmitModuleResolutionKind;
 }
 
 // Types //
